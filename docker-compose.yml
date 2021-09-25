@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  dbt: 
+    build:
+      context: ./dbt
+#    environment:
+#     - MONGO_DSN=mongo:27017
+    depends_on:
+      - clickhouse
+    links:
+      - clickhouse
+    ports:
+      - 8001:8001
+#    volumes:
+   
+
+  clickhouse:
+    image: yandex/clickhouse-server:21.7.11
+#    command: --bind_ip_all --port 27017
+    # ports:
+    #   - 27020:27020
+#   environment:
+#     - MONGO_INITDB_DATABASE=main
+    # volumes:
+    #   - ./user.xml:/etc/clickhouse-server/user.xml
+         

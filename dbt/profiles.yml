@@ -1,0 +1,25 @@
+clickhouse_starschema:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: dev
+      host: clickhouse
+      user: default
+      # password: 123     
+
+
+
+# clickhouse_starschema:
+#   target: dev
+#   outputs:
+#     dev:
+#       type: postgres
+#       host: clickhouse
+#       user: postgres
+#       password: sdfsf
+#       port: 1234
+#       dbname: dbt
+#       schema: dev
+#       threads: 1
+#       keepalives_idle: 0 # default 0, indicating the system default

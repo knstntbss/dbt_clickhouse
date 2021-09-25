@@ -3,7 +3,7 @@ clickhouse_starschema:
   outputs:
     dev:
       type: clickhouse
-      schema: dev
+      schema: dbt
       host: clickhouse
       user: default
       # password: 123     

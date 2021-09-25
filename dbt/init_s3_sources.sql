@@ -1,4 +1,4 @@
-{% macro init_s3_sources() -%}
+{% macro init_s3_sources() %}
 
     {% set sql %}
 

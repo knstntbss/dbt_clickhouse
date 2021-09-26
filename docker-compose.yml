@@ -1,40 +1,31 @@
 version: "3.3"
 
 services:
+  
   dbt: 
     build:
       context: ./dbt
-    # command:  bash
-#    environment:
-#     - MONGO_DSN=mongo:27017
     depends_on:
       - clickhouse
     links:
       - clickhouse
     ports:
       - 8001:8001
-#    volumes:
+
    
 
   clickhouse:
     image: yandex/clickhouse-server:21.7.11
-#    command: --bind_ip_all --port 27017
     ports:
       - 8123:8123
-#   environment:
-#     - MONGO_INITDB_DATABASE=main
-    # volumes:
-    #   - ./user.xml:/etc/clickhouse-server/user.xml
+
 
   tabix:
     image: spoonest/clickhouse-tabix-web-client
     ports:
       - "5051:80"
-    # networks:
-    #     - clickhouse
     depends_on:
       - clickhouse
-    # restart: always
     links:
       - clickhouse
          
